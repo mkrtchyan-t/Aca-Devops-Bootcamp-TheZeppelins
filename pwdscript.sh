@@ -10,4 +10,9 @@ index=$(cat /etc/nginx/sites-enabled/default | grep index | tr ';' ' ' | awk '{p
 
 # creating new file
 
+if [[ ! -d $root_path ]]
+then
+	mkdir $root_path
+fi
+
 echo "Barev World" > ${root_path}${index}
