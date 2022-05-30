@@ -19,7 +19,12 @@ if [[ -z $file ]]; then
 fi
 
 #remove /etc/nginx/sites-enabled/default file
+
+if [[ -f /etc/nginx/sites-enable/default ]]
+then
 rm /etc/nginx/sites-enabled/default
+
+fi
 
 #testing nginx
 nginx -t
