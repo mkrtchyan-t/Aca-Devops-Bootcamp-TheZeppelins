@@ -14,4 +14,5 @@ if [[ ! -d $root_path ]]
 then
 	mkdir $root_path
 fi
+
 echo "Barev World" > ${root_path}${index}
