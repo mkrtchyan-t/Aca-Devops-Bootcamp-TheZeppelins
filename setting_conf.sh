@@ -2,11 +2,11 @@
 
 # finding root_path from bootcamp_aca.conf
 
-root_path=$(cat /etc/nginx/sites-enabled/default | grep root| tr ';' '/' | awk '{print $2}'  )
+root_path=$(cat /etc/nginx/sites-enabled/bootcamp_aca.conf | grep root| tr ';' '/' | awk '{print $2}'  )
 
 # finding name of creating file
 
-index=$(cat /etc/nginx/sites-enabled/default | grep index | tr ';' ' ' | awk '{print $2}' )
+index=$(cat /etc/nginx/sites-enabled/bootcamp_aca.conf | grep index | tr ';' ' ' | awk '{print $2}' )
 
 # creating new file
 
@@ -16,3 +16,9 @@ then
 fi
 
 echo "Barev World" > ${root_path}${index}
+
+# checking bootcamp_aca.conf file
+
+if [[ $(curl -s -I http://localhost | grep HTTP | cut -d " " -f 2) -eq 200 ]] ; then
+	echo "every thing is OK"
+fi
