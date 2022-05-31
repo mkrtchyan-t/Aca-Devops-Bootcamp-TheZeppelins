@@ -45,7 +45,7 @@ Vernginx=$(echo $?)
 if [[ $Vernginx == 0 ]]
 then 
 echo "It is OK"
-else echo "testing faild"
+else exit
 fi
 
 # reloading service
