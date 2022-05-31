@@ -23,6 +23,3 @@ if [[ $(curl -s -I http://localhost | grep HTTP | cut -d " " -f 2) -ne 200 ]] ; 
 	exit
 fi
 
-if [[ cat ${root_path}${index} ! -eq "Barev World" ]]; then
-	exit
-fi
