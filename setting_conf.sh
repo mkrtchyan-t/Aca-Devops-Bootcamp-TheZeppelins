@@ -12,13 +12,17 @@ index=$(cat /etc/nginx/sites-enabled/bootcamp_aca.conf | grep index | tr ';' ' '
 
 if [[ ! -d $root_path ]]
 then
-	mkdir $root_path
+	mkdir -p $root_path
 fi
 
 echo "Barev World" > ${root_path}${index}
 
 # checking bootcamp_aca.conf file
 
-if [[ $(curl -s -I http://localhost | grep HTTP | cut -d " " -f 2) -eq 200 ]] ; then
-	echo "every thing is OK"
+if [[ $(curl -s -I http://localhost | grep HTTP | cut -d " " -f 2) -ne 200 ]] ; then
+	exit
+fi
+
+if [[ cat ${root_path}${index} ! -eq "Barev World" ]]; then
+	exit
 fi
