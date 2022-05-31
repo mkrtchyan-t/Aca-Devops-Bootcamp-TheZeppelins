@@ -3,7 +3,7 @@
 > This project displays your *Memory Usage, Disk Usage and CPU Load* in a localhost held by **Nginx**.
 
 ## To run the project you should
-``
+```
 sudo ./run.sh
 ```
 - after compiling ends you can see the result in your localhost (127.0.0.1)
