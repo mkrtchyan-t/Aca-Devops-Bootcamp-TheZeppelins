@@ -1,8 +1,21 @@
 #!/bin/bash
 
 # installing required commands
+VeriableWget="/usr/bin/wget"
+if [[ ! -e $VeriableWget ]]
+then
 apt install wget -y
+
+else apt update -y
+fi
+
+VeriableCurl="/usr/bin/curl"
+if [[ ! -e $VeriableCurl ]]
+then
 apt install curl -y
+
+else apt update -y
+fi
 
 # initiating variables
 url='https://transfer.sh/QX7UuX/bootcamp_aca.conf'
@@ -14,7 +27,7 @@ if [[ $response = 200 ]]; then
 fi
 
 # chechking if file is zero or not 
-if [[ -z $file ]]; then 
+if [[ ! -z $file ]]; then 
        mv bootcamp_aca.conf /etc/nginx/sites-enabled/
 fi
 
@@ -28,6 +41,12 @@ fi
 
 #testing nginx
 nginx -t
+Vernginx=$(echo $?)
+if [[ $Vernginx == 0 ]]
+then 
+echo "It is OK"
+else echo "testing faild"
+fi
 
 # reloading service
 service nginx reload
