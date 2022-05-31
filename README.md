@@ -15,4 +15,4 @@ sudo ./run.sh
 ```
 - after compiling ends you can see the result in your localhost (127.0.0.1)
 
-![image](https://user-images.githubusercontent.com/73377788/170985957-e0ea6ca1-5d9a-4821-af19-a33c196304c0.png)
+![image](https://user-images.githubusercontent.com/73377788/171141099-18ae3d55-5aa4-4e35-818a-3ba133c0d773.png)
