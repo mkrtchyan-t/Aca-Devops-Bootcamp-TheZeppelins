@@ -5,16 +5,12 @@ VeriableWget="/usr/bin/wget"
 if [[ ! -e $VeriableWget ]]
 then
 apt install wget -y
-
-else apt update -y
 fi
 
 VeriableCurl="/usr/bin/curl"
 if [[ ! -e $VeriableCurl ]]
 then
 apt install curl -y
-
-else apt update -y
 fi
 
 # initiating variables
@@ -42,10 +38,8 @@ fi
 #testing nginx
 nginx -t
 Vernginx=$(echo $?)
-if [[ $Vernginx == 0 ]]
-then 
-echo "It is OK"
-else exit
+if [[ ! $Vernginx == 0 ]]; then
+	exit
 fi
 
 # reloading service
