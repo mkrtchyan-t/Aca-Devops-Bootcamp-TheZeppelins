@@ -1,6 +1,6 @@
 # Aca-Devops-Bootcamp-TheZeppelins
 
-> This project displays your *Memory Usage, Disk Usage and CPU Load* in a localhost held by **Nginx**.
+> This project displays your *Memory Usage, Disk Usage and CPU Usage Percentage* in a localhost held by **Nginx**.
 
 ## To run the project you should
 ```
